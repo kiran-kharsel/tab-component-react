@@ -6,6 +6,8 @@ import TabList from './components/tabList/TabList'
 
 import TAB_CONFIG from './constants/tabs.js'
 
+console.log(TAB_CONFIG)
+
 function App() {
   const [count, setCount] = useState(0)
 
