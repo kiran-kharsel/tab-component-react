@@ -1,6 +1,6 @@
 
 
-export const TAB_CONFIG = [
+const TAB_CONFIG = [
   {
     id: "overview",
     label: "Overview",
@@ -17,3 +17,5 @@ export const TAB_CONFIG = [
     content: "Adjust your preferences here."
   }
 ];
+
+export default TAB_CONFIG
