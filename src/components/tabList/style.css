@@ -52,3 +52,9 @@
     align-items: center;
     padding: 0px 0px;
 }
+
+.tabContent{
+    background-color: gainsboro;
+    margin-top: 2rem;
+    height: 200px;
+}
