@@ -8,14 +8,14 @@ const WIDTH = 800;
 
 function TabList({tabs}) {
   const [selectedIndex, setSelectedIndex] = useState(0)
-  const [width, setWidth] = useState(0);
+  const [stripeWidth, setStripeWidth] = useState(0);
   const [positionLeft, setPositionLeft] = useState(0);
 
   const tabsStripeRef = useRef(null)
 
 
   useEffect(()=>{
-    setWidth(tabsStripeRef.current.offsetWidth)
+    setStripeWidth(tabsStripeRef.current.offsetWidth)
     setPositionLeft(tabsStripeRef.current.offsetLeft)
   }, [])
 
@@ -27,7 +27,7 @@ function TabList({tabs}) {
 
   function handleNextBtnClick(){
     console.log('next btn')
-    setPositionLeft(prev => prev - 100);
+    setPositionLeft(prev => prev - 50);
   }
 
   
@@ -39,7 +39,7 @@ function TabList({tabs}) {
         </div>
 
         <div className="next-btn btn">
-          {width > WIDTH && <Button label={'>'} onclick={handleNextBtnClick}/>}
+          {(stripeWidth > WIDTH && (positionLeft >= WIDTH - stripeWidth)) && <Button label={'>'} onclick={handleNextBtnClick}/>}
         </div>
         
         
