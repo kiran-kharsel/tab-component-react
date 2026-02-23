@@ -14,8 +14,6 @@ function TabList({tabs}) {
   const tabsStripeRef = useRef(null)
 
 
-
-
   useEffect(()=>{
     console.log(tabsStripeRef.current.offsetLeft)
     setWidth(tabsStripeRef.current.offsetWidth)
@@ -39,7 +37,7 @@ function TabList({tabs}) {
           tabs.map((tab, index) => {
             return <Button 
             key={tab.id} 
-            label={tab.label}
+            label={tab.name}
             onclick={handleTabChange(index)}
             />
           })
