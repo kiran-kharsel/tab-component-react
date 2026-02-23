@@ -39,6 +39,8 @@ button {
   border: 0;
   background: transparent;
   text-transform: capitalize;
+  width: fit-content;
+  white-space: nowrap;
 }
 
 button:hover {
