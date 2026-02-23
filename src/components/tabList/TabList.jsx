@@ -69,9 +69,17 @@ function TabList({tabs}) {
 
 
       <div className="tabContent">
-        {
-          tabs[selectedIndex].description
-        }
+        <div className="tabContentImage">
+          <img src={tabs[selectedIndex].image} alt="" />
+        </div>
+        <div className="tabContentDesc">
+          <div>
+            {tabs[selectedIndex].description}
+          </div>
+          <div>
+            {tabs[selectedIndex].country}
+          </div>
+        </div>
       </div>
     </div>
   )

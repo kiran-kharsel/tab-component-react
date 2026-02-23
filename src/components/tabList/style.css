@@ -1,5 +1,5 @@
 .tabList{
-    background-color: green;
+    /* background-color: green; */
     width: 800px;
     padding: 1rem;
 }
@@ -17,16 +17,25 @@
     display: none;
 }
 
+.tabsStripe{
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
 .tabHeader .btn{
     z-index: 5;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.4rem;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: inherit;
+    height: 100%;
+    width: 50px;
 }
 
 .tabHeader .prev-btn{
@@ -35,8 +44,9 @@
 }
 
 .tabHeader .next-btn{
-    right: 0;
+    right: -0;
     background: linear-gradient(to right, var(--light-bg) 5%, var(--dark-bg) 95%);
+
 }
 
 .tabHeader .btn button:hover{
@@ -44,17 +54,37 @@
 }
 
 
-.tabsStripe{
-    height: 100%;
-    width: fit-content;
-    background-color: red;
-    display: flex;
-    align-items: center;
-    padding: 0px 0px;
-}
+
 
 .tabContent{
-    background-color: gainsboro;
     margin-top: 2rem;
-    height: 200px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.tabContentImage{
+    height: 100%;
+}
+
+.tabContentImage img{
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.tabContentDesc{
+    padding-top: 15px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tabContentDesc div:nth-child(2){
+    font-size: 3rem;
+    text-align: center;
+    color: var(--light-bg);
+    font-weight: bold;
 }
