@@ -17,8 +17,8 @@ function TabList({tabs}) {
     <div className='tabList'>
       <div className="tabHeader">
         <Button label={'<'}/>
-        <Button label={'>'}/>
-        <div className="tabs-stripe">
+        
+        <div className="tabsStripe">
           {
           tabs.map((tab, index) => {
             return <Button 
@@ -29,6 +29,7 @@ function TabList({tabs}) {
           })
         }
         </div> 
+        <Button label={'>'}/>
       </div>
 
 

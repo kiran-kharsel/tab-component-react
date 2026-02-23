@@ -35,9 +35,10 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
   color: var(--text-color);
-  background-color: red;
   outline: 0;
   border: 0;
+  background: transparent;
+  text-transform: capitalize;
 }
 
 button:hover {
