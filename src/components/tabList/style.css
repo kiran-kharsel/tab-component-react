@@ -1,0 +1,10 @@
+.tabList{
+    background-color: green;
+    width: 900px;
+    padding: 1rem;
+}
+
+.tabHeader{
+    background-color: beige;
+    overflow-y: auto;
+}

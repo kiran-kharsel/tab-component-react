@@ -16,7 +16,10 @@ function TabList({tabs}) {
   return (
     <div className='tabList'>
       <div className="tabHeader">
-        {
+        <Button label={'<'}/>
+        <Button label={'>'}/>
+        <div className="tabs-stripe">
+          {
           tabs.map((tab, index) => {
             return <Button 
             key={tab.id} 
@@ -25,7 +28,10 @@ function TabList({tabs}) {
             />
           })
         }
+        </div> 
       </div>
+
+
       <div className="tabContent">
         {
           tabs[selectedIndex].content
