@@ -15,7 +15,6 @@ function TabList({tabs}) {
 
 
   useEffect(()=>{
-    console.log(tabsStripeRef.current.offsetWidth)
     setWidth(tabsStripeRef.current.offsetWidth)
     setPositionLeft(tabsStripeRef.current.offsetLeft)
   }, [])
@@ -27,14 +26,8 @@ function TabList({tabs}) {
   };
 
   function handleNextBtnClick(){
-    console.log('next btn clicked')
-    setPositionLeft(prev => {
-      const newPosition = prev - 100;
-      tabsStripeRef.current.style.transform = `translateX(${newPosition}px)`;
-      return newPosition
-    })
-    
-    //setPositionLeft(tabsStripeRef.current.offsetLeft)
+    console.log('next btn')
+    setPositionLeft(prev => prev - 100);
   }
 
   
@@ -50,7 +43,12 @@ function TabList({tabs}) {
         </div>
         
         
-        <div ref={tabsStripeRef} className="tabsStripe">
+        <div 
+        style={{
+          transform: `translateX(${positionLeft}px)`,
+          transition: "transform 0.3s ease",
+        }}
+        ref={tabsStripeRef} className="tabsStripe">
           {
           tabs.map((tab, index) => {
             return <Button 
