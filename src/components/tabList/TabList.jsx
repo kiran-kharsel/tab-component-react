@@ -15,7 +15,7 @@ function TabList({tabs}) {
 
 
   useEffect(()=>{
-    console.log(tabsStripeRef.current.offsetLeft)
+    console.log(tabsStripeRef.current.offsetWidth)
     setWidth(tabsStripeRef.current.offsetWidth)
     setPositionLeft(tabsStripeRef.current.offsetLeft)
   }, [])
@@ -26,11 +26,19 @@ function TabList({tabs}) {
     }
   };
 
-
+  
   return (
     <div className='tabList'>
       <div className="tabHeader">
-        {positionLeft > 0 && <Button label={'<'}/>}
+        <div className="prev-btn">
+          {positionLeft > 0 && <Button label={'<'}/>}
+        </div>
+
+        <div className="next-btn">
+          {/* {width > 900 && <Button label={'>'}/>} */}
+        {width > 800 ? (<Button label={'>'}/>) : null}
+        </div>
+        
         
         <div ref={tabsStripeRef} className="tabsStripe">
           {
@@ -44,7 +52,7 @@ function TabList({tabs}) {
         }
         </div> 
         
-        {width > WIDTH && <Button label={'>'}/>}
+
       </div>
 
 
