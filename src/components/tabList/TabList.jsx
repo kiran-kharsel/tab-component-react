@@ -9,16 +9,17 @@ const WIDTH = 900;
 function TabList({tabs}) {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [width, setWidth] = useState(0);
+  const [positionLeft, setPositionLeft] = useState(0);
 
   const tabsStripeRef = useRef(null)
-  const widthRef = useRef()
 
 
 
 
   useEffect(()=>{
-    console.log(tabsStripeRef.current.offsetWidth)
+    console.log(tabsStripeRef.current.offsetLeft)
     setWidth(tabsStripeRef.current.offsetWidth)
+    setPositionLeft(tabsStripeRef.current.offsetLeft)
   }, [])
 
   function handleTabChange(index){
@@ -31,7 +32,7 @@ function TabList({tabs}) {
   return (
     <div className='tabList'>
       <div className="tabHeader">
-        <Button label={'<'}/>
+        {positionLeft > 0 && <Button label={'<'}/>}
         
         <div ref={tabsStripeRef} className="tabsStripe">
           {
@@ -44,7 +45,7 @@ function TabList({tabs}) {
           })
         }
         </div> 
-
+        
         {width > WIDTH && <Button label={'>'}/>}
       </div>
 
