@@ -56,6 +56,7 @@ function TabList({tabs}) {
           {
           tabs.map((tab, index) => {
             return <Button 
+            data-active = {index === selectedIndex}
             key={tab.id} 
             label={tab.name}
             onclick={handleTabChange(index)}
