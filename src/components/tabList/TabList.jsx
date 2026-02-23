@@ -26,8 +26,11 @@ function TabList({tabs}) {
   };
 
   function handleNextBtnClick(){
-    console.log('next btn')
     setPositionLeft(prev => prev - 50);
+  }
+
+  function handlePrevBtnClick(){
+    setPositionLeft(prev => prev + 50)
   }
 
   
@@ -35,11 +38,12 @@ function TabList({tabs}) {
     <div className='tabList'>
       <div className="tabHeader">
         <div className="prev-btn btn">
-          {positionLeft > 0 && <Button label={'<'}/>}
+          {positionLeft < 0 && <Button label={'<'} onclick={handlePrevBtnClick}/>}
         </div>
 
         <div className="next-btn btn">
-          {(stripeWidth > WIDTH && (positionLeft >= WIDTH - stripeWidth)) && <Button label={'>'} onclick={handleNextBtnClick}/>}
+          {(stripeWidth > WIDTH && (positionLeft >= WIDTH - stripeWidth)) 
+          && <Button label={'>'} onclick={handleNextBtnClick}/>}
         </div>
         
         
@@ -66,7 +70,7 @@ function TabList({tabs}) {
 
       <div className="tabContent">
         {
-          tabs[selectedIndex].content
+          tabs[selectedIndex].description
         }
       </div>
     </div>
