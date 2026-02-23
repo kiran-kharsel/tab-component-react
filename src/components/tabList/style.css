@@ -8,9 +8,13 @@
     width: 100%;
     height: 50px;
     background-color: var(--light-bg);
-    overflow-y: auto;
+    overflow-y: scroll;
     position: relative;
     border-radius: 50px;
+}
+
+.tabHeader::-webkit-scrollbar{
+    display: none;
 }
 
 .tabHeader > button{
@@ -34,9 +38,9 @@
 }
 
 .tabsStripe{
-    width: 100%;
     height: 100%;
-    background-color: transparent;
+    width: fit-content;
+    background-color: red;
     display: flex;
     align-items: center;
 }

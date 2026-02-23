@@ -1,10 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import './style.css'
 import Button from '../button'
 
+
+// constant
+const WIDTH = 900;
+
 function TabList({tabs}) {
   const [selectedIndex, setSelectedIndex] = useState(0)
+  const [width, setWidth] = useState(0);
 
+  const tabsStripeRef = useRef(null)
+  const widthRef = useRef()
+
+
+
+
+  useEffect(()=>{
+    console.log(tabsStripeRef.current.offsetWidth)
+    setWidth(tabsStripeRef.current.offsetWidth)
+  }, [])
 
   function handleTabChange(index){
     return ()=>{
@@ -18,7 +33,7 @@ function TabList({tabs}) {
       <div className="tabHeader">
         <Button label={'<'}/>
         
-        <div className="tabsStripe">
+        <div ref={tabsStripeRef} className="tabsStripe">
           {
           tabs.map((tab, index) => {
             return <Button 
@@ -29,7 +44,8 @@ function TabList({tabs}) {
           })
         }
         </div> 
-        <Button label={'>'}/>
+
+        {width > WIDTH && <Button label={'>'}/>}
       </div>
 
 
