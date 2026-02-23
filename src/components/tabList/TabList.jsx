@@ -30,11 +30,11 @@ function TabList({tabs}) {
   return (
     <div className='tabList'>
       <div className="tabHeader">
-        <div className="prev-btn">
+        <div className="prev-btn btn">
           {positionLeft > 0 && <Button label={'<'}/>}
         </div>
 
-        <div className="next-btn">
+        <div className="next-btn btn">
           {/* {width > 900 && <Button label={'>'}/>} */}
         {width > 800 ? (<Button label={'>'}/>) : null}
         </div>
