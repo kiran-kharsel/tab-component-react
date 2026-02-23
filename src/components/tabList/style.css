@@ -1,7 +1,5 @@
 .tabList{
-    /* background-color: green; */
     width: 800px;
-    padding: 1rem;
 }
 
 .tabHeader{
@@ -60,7 +58,7 @@
 
 
 .tabContent{
-    margin-top: 2rem;
+    margin-top: 10rem;
     height: 300px;
     display: flex;
     align-items: center;
@@ -69,12 +67,18 @@
 
 .tabContentImage{
     height: 100%;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+.tabContentImage:hover{
+    box-shadow: var(--accent-color) 0px 5px 15px;
 }
 
 .tabContentImage img{
     height: 100%;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: inherit;
 }
 
 .tabContentDesc{

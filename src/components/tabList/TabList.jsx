@@ -42,7 +42,7 @@ function TabList({tabs}) {
         </div>
 
         <div className="next-btn btn">
-          {(stripeWidth > WIDTH && (positionLeft >= WIDTH - stripeWidth)) 
+          {((stripeWidth > WIDTH) && (positionLeft >= WIDTH - stripeWidth)) 
           && <Button label={'>'} onclick={handleNextBtnClick}/>}
         </div>
         

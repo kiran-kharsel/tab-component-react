@@ -36,7 +36,7 @@ const TAB_CONFIG = [
     country: "Japan",
     image: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHRva3lvfGVufDB8fDB8fHww'
   },
-  {
+    {
     id: 6,
     name: "Barcelona",
     description: "Barcelona enchants with its Mediterranean charm, stunning architecture by Antoni Gaudí, and lively beaches. The city’s Gothic Quarter, vibrant markets, and football passion create a rich cultural tapestry. Barcelona is a feast for the senses, blending art, history, and seaside relaxation.",

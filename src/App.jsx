@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-     <h1>Tabs Component</h1>
+
      <TabList tabs={TAB_CONFIG}/>
     </>
   )
