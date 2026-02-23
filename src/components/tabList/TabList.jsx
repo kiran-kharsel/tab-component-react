@@ -4,7 +4,7 @@ import Button from '../button'
 
 
 // constant
-const WIDTH = 900;
+const WIDTH = 800;
 
 function TabList({tabs}) {
   const [selectedIndex, setSelectedIndex] = useState(0)
@@ -26,6 +26,17 @@ function TabList({tabs}) {
     }
   };
 
+  function handleNextBtnClick(){
+    console.log('next btn clicked')
+    setPositionLeft(prev => {
+      const newPosition = prev - 100;
+      tabsStripeRef.current.style.transform = `translateX(${newPosition}px)`;
+      return newPosition
+    })
+    
+    //setPositionLeft(tabsStripeRef.current.offsetLeft)
+  }
+
   
   return (
     <div className='tabList'>
@@ -35,8 +46,7 @@ function TabList({tabs}) {
         </div>
 
         <div className="next-btn btn">
-          {/* {width > 900 && <Button label={'>'}/>} */}
-        {width > 800 ? (<Button label={'>'}/>) : null}
+          {width > WIDTH && <Button label={'>'} onclick={handleNextBtnClick}/>}
         </div>
         
         
