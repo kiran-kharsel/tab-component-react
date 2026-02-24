@@ -35,7 +35,7 @@ function TabList({tabs}) {
 
   
   return (
-    <div className='tabList'>
+    <div className='tabList' role='tablist'>
       <div className="tabHeader">
         <div className="prev-btn btn">
           {positionLeft < 0 && <Button label={'<'} onclick={handlePrevBtnClick}/>}
@@ -56,7 +56,9 @@ function TabList({tabs}) {
           {
           tabs.map((tab, index) => {
             return <Button 
+            role='tab'
             data-active = {index === selectedIndex}
+            aria-selected = {index === selectedIndex}
             key={tab.id} 
             label={tab.name}
             onclick={handleTabChange(index)}
@@ -69,7 +71,7 @@ function TabList({tabs}) {
       </div>
 
 
-      <div className="tabContent">
+      <div className="tabContent" role='tabcontent'>
         <div className="tabContentImage">
           <img src={tabs[selectedIndex].image} alt="" />
         </div>

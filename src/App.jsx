@@ -10,7 +10,6 @@ function App() {
 
   return (
     <>
-
      <TabList tabs={TAB_CONFIG}/>
     </>
   )

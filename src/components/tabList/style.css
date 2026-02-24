@@ -90,7 +90,7 @@
 }
 
 .tabContentDesc div:nth-child(2){
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
     color: var(--light-bg);
     font-weight: bold;
